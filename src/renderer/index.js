@@ -2,14 +2,15 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import store from './store';
 import Login from "./components/Login";
+import App from './components/App'
 
-function App() {
+function root() {
   return (
     <Provider store={store}>
-      <Login />
+      <App />
     </Provider>
 
   );
 }
 
-export default App;
+export default root;

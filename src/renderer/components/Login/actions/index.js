@@ -14,9 +14,9 @@ const loginFailure = ({ message = 'Login failed' }) => ({
   type: LOGIN_FAILURE,
   payload: { message }
 });
-const loginSuccess = ({ email, message = 'Login success. Redirecting...' }) => ({
+const loginSuccess = ({ account, message = 'Login success. Redirecting...' }) => ({
   type: LOGIN_SUCCESS,
-  payload: { email, message },
+  payload: { account, message },
 })
 
 export const login = ({ email, password }) => (dispatch) => {
