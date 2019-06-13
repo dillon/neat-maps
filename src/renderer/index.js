@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import store from './store';
 import App from './components/App'
 
-function root() {
+function Renderer() {
   return (
     <Provider store={store}>
       <App />
@@ -12,4 +12,4 @@ function root() {
   );
 }
 
-export default root;
+export default Renderer;
