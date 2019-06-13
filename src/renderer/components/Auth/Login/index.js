@@ -5,6 +5,6 @@ import Login from './Login';
 
 const LoginContainer = (props) => <Login className="App" {...props} />
 
-const mapStateToProps = ({ authReducer: { account, message } }) => ({ account, message })
+const mapStateToProps = ({ authReducer: { message } }) => ({ message })
 
 export default connect(mapStateToProps)(LoginContainer)
