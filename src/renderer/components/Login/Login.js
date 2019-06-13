@@ -1,5 +1,5 @@
 import React from 'react';
-import { login } from '../actions'
+import { login } from './actions'
 
 export default class extends React.Component {
   constructor(props) {
