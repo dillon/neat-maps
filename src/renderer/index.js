@@ -4,7 +4,6 @@ import store from './store';
 import Login from "./components/Login";
 
 function App() {
-  console.log(store)
   return (
     <Provider store={store}>
       <Login />
