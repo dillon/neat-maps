@@ -11,8 +11,6 @@ const initialState = {
 };
 
 export default (state = initialState, action) => {
-  console.log(state)
-  console.log(action);
   switch (action.type) {
     case LOGIN_REQUEST:
       return {
