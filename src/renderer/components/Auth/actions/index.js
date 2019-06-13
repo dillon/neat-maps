@@ -10,3 +10,7 @@ export const login = ({ account }) => ({
 export const logout = () => ({
   type: LOGOUT
 });
+
+export const createUser = () => ({
+
+})
