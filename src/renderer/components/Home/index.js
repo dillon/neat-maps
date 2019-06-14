@@ -1,3 +1,9 @@
 import React from 'react';
+import FileUpload from '../FileUpload';
 
-export default () => <div>Home</div>
+export default () => (
+  <div>
+    <FileUpload />
+    {/* <Map /> */}
+  </div>
+)

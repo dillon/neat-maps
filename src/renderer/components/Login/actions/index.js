@@ -1,5 +1,5 @@
 import fetch from 'isomorphic-fetch';
-import { url } from '../../../../common/constants/apis/neat'
+import { url } from '../constants/api'
 
 export const LOGIN_REQUEST = 'LOGIN';
 export const LOGIN_FAILURE = 'LOGIN_FAILURE';
@@ -28,7 +28,6 @@ export const login = ({ email, password }) => (dispatch) => {
       // eslint-disable-next-line no-shadow
       const { email, error } = data;
       if (email) return dispatch(loginSuccess({ account: email }))
-      if (error) return dispatch(loginFailure({ message: error.message }))
       return dispatch(loginFailure({ message: error.message }))
     })
     .catch(({ message = 'login error' }) => dispatch(loginFailure({ message })))
