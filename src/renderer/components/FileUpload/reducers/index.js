@@ -2,11 +2,12 @@ import {
   FILE_UPLOAD_FAILURE,
   FILE_UPLOAD_SUCCESS,
   DELETE_FILE,
-  FILE_SELECT
+  SELECT_FILE
 } from '../actions'
 
 const initialState = {
   files: [],
+  fileNames: [],
   numberOfFiles: 0,
   index: -1,
   message: null,
@@ -23,6 +24,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         files: [...state.files, action.payload.data],
+        fileNames: [...state.fileNames, action.payload.name],
         numberOfFiles: state.numberOfFiles + 1,
         index: state.index + 1,
         message: ''
@@ -34,12 +36,16 @@ export default (state = initialState, action) => {
           ...state.files.slice(0, action.payload.index - 1),
           ...state.files.slice(action.payload.index + 1)
         ],
+        fileNames: [
+          ...state.fileNames.slice(0, action.payload.index - 1),
+          ...state.fileNames.slice(action.payload.index + 1)
+        ],
         numberOfFiles: state.numberOfFiles - 1,
         index: state.index - 1,
         message: ''
 
       };
-    case FILE_SELECT:
+    case SELECT_FILE:
       return {
         ...state,
         account: null,

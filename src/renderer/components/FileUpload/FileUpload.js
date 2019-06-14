@@ -1,7 +1,7 @@
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import CsvParse from '@vtex/react-csv-parse'
-import { fileUploadSuccess, fileUploadFailure } from './actions'
+import { fileUploadSuccess, fileUploadFailure, deleteFile, selectFile } from './actions'
 import { arrayHasDuplicates, reformatData } from './helpers'
 import styles from './styles';
 
@@ -32,12 +32,13 @@ export default class extends React.Component {
   handleSubmitUpload = event => {
     event.persist()
     event.preventDefault()
+    const { name } = document.getElementById('fileInput').files[0]
     const { dispatch } = this.props;
     const { data, columns, columns: { ADDRESS, CITY, STATE, ZIPCODE, CATEGORY } } = this.state;
     if (arrayHasDuplicates([ADDRESS, CITY, STATE, ZIPCODE, CATEGORY])) {
       dispatch(fileUploadFailure({ message: 'Column selections must each be unique' }))
     } else {
-      dispatch(fileUploadSuccess({ data: reformatData({ data, columns }) }))
+      dispatch(fileUploadSuccess({ data: reformatData({ data, columns }), name }))
       this.resetState()
     }
   }
@@ -66,12 +67,34 @@ export default class extends React.Component {
     })
   }
 
+  selectFile = ({ event, index }) => {
+    event.preventDefault()
+    const { dispatch } = this.props;
+    dispatch(selectFile({ index }))
+  }
+
+  deleteFile = ({ event, index }) => {
+    event.preventDefault()
+    const { dispatch } = this.props;
+    dispatch(deleteFile({ index }))
+  }
+
   render() {
-    const { message, numberOfFiles } = this.props;
+    const { message, numberOfFiles, fileNames, index } = this.props;
     const { data, columns: { ADDRESS, CITY, STATE, ZIPCODE, CATEGORY } } = this.state
     const columnNames = ['ADDRESS', 'CITY', 'STATE', 'ZIPCODE', 'CATEGORY']
     return (
       <div>
+        <div>
+          {fileNames.map((x, i) => (
+            // eslint-disable-next-line react/no-array-index-key
+            <div key={x + i} style={i === index ? styles.fileInfoContainerSelected : styles.fileInfoContainer}>
+              <span style={styles.fileInfoChild}>{x}</span>
+              <button type="submit" name='select-file' onClick={event => this.selectFile({ event, index: i })} style={styles.selectButton}>Select</button>
+              <button type="submit" name='delete-file' onClick={event => this.deleteFile({ event, index: i })}>Delete</button>
+            </div>)
+          )}
+        </div>
         {(numberOfFiles < 3) ?
           <form id="form" onSubmit={this.handleSubmitUpload}>
             <CsvParse
@@ -86,8 +109,8 @@ export default class extends React.Component {
                   <span style={styles.selectSpan}>{name}: </span>
                   <select style={styles.select} defaultValue='default' form="form" name={name} onChange={this.handleChangeSelect} value={this.state[name]}>
                     <option key={`select ${name}`}>SELECT {name}</option>
-                    {Object.keys(data[0]).map((i) => (
-                      <option key={i + 1} value={i + 1}>{data[0][i]}</option>
+                    {Object.keys(data[0]).map((x, i) => (
+                      <option key={x + 1} value={i + 1}>{data[0][x]}</option>
                     ))
                     }
                   </select>

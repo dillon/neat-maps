@@ -5,6 +5,6 @@ import FileUpload from './FileUpload';
 
 const FileUploadContainer = (props) => <FileUpload {...props} />
 
-const mapStateToProps = ({ fileUploadReducer: { numberOfFiles, message } }) => ({ numberOfFiles, message })
+const mapStateToProps = ({ fileUploadReducer: { numberOfFiles, fileNames, message, index } }) => ({ numberOfFiles, fileNames, message, index })
 
 export default connect(mapStateToProps)(FileUploadContainer)
