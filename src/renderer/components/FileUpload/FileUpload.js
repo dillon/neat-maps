@@ -101,7 +101,7 @@ export default class extends React.Component {
               keys={[0, 1, 2, 3, 4]}
               onDataUploaded={this.handleDataUpload}
               onError={this.handleErrorUpload}
-              render={onChange => <input id="fileInput" type="file" onChange={onChange} accept=".csv" />}
+              render={onChange => <input id="fileInput" type="file" style={styles.input} onChange={onChange} accept=".csv" />}
             />
             {data && columnNames.map((name) => {
               return (
@@ -123,7 +123,12 @@ export default class extends React.Component {
                 <input type="submit" value="Submit" title="Submit"
                   disabled={!(data && ADDRESS && CITY && STATE && ZIPCODE && CATEGORY)}
                 />
-              </div>}
+                <p>Designate columns</p>
+              </div>
+            }
+            {(!numberOfFiles && !data) &&
+              < p > Upload a .csv file</p>
+            }
           </form>
           : <p>Maximum 3 files uploaded</p>
         }

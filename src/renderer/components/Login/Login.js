@@ -1,5 +1,6 @@
 import React from 'react';
-import { login } from './actions'
+import { login } from './actions';
+import styles from './styles';
 
 export default class extends React.Component {
   constructor(props) {
@@ -32,21 +33,22 @@ export default class extends React.Component {
     const { message } = this.props;
     const { formInput: { email, password } } = this.state
     return (
-      <div>
-        <form onSubmit={this.handleSubmit}>
-          <label htmlFor="email">
-            Email: <input type="text" name="email" value={email} onChange={this.handleFormChange} />
+      <div style={styles.login}>
+        <form onSubmit={this.handleSubmit} style={styles.login}>
+          <label htmlFor="email" style={styles.row} >
+            <span>Email: </span><input style={styles.input} type="text" name="email" value={email} onChange={this.handleFormChange} />
           </label>
-          <label htmlFor="password">
-            Password: <input type="password" name="password" value={password} onChange={this.handleFormChange} />
+          <label htmlFor="password" style={styles.row} >
+            <span>Password: </span><input style={styles.input} type="password" name="password" value={password} onChange={this.handleFormChange} />
           </label>
           <input
             type="submit"
             value="Submit"
             title="Login"
+            style={styles.button}
           />
         </form>
-        <p>{message}</p>
+        <p style={styles.message}>{message}</p>
       </div>
     )
   }
