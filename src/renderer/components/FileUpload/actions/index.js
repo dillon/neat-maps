@@ -37,10 +37,10 @@ export const fileUpload = ({ data, columns, name }) => (dispatch) => {
     return fetch(`https://maps.googleapis.com/maps/api/geocode/json?key=${process.env.REACT_APP_GOOGLE_API_KEY}&address=${fullAddress}`)
       .then(response => response.json())
       .then(({ results }) => ({
-        name,
         category,
         lat: results[0].geometry.location.lat,
-        lng: results[0].geometry.location.lng
+        lng: results[0].geometry.location.lng,
+        fullAddress
       }))
   })
   return Promise.all(promises)

@@ -3,10 +3,11 @@ import GoogleMapReact from 'google-map-react';
 import { fitBounds } from 'google-map-react/utils';
 import hexColorFromString from "./utils/hexColorFromString"
 import findBounds from './utils/findBounds';
-
+import Marker from './Marker';
 
 const MAP_HEIGHT = 600;
 const MAP_WIDTH = 600;
+const K_HOVER_DISTANCE = 15;
 // eslint-disable-next-line react/prefer-stateless-function
 class Map extends Component {
 
@@ -21,7 +22,7 @@ class Map extends Component {
       // Important! Always set the container height explicitly
       <div style={{ height: MAP_HEIGHT, width: MAP_WIDTH }}>
         <GoogleMapReact
-          hoverDistance
+          hoverDistance={K_HOVER_DISTANCE}
           bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_API_KEY }}
           center={center}
           zoom={zoom}
@@ -30,20 +31,14 @@ class Map extends Component {
         // TODO figure out how to zoom to correct place
         >
           {index >= 0 && files[index].map(row => {
-            console.log(row.lat, row.lng, row.category)
+            const { fullAddress, category } = row;
             return (
-              <div
+              <Marker
                 key={`${row.lat}-${row.lng}`}
                 lat={row.lat}
                 lng={row.lng}
-                // text="My Marker"
-                style={{
-                  width: 15,
-                  height: 15,
-                  backgroundColor: hexColorFromString(row.category),
-                  border: '1px solid black',
-                  borderRadius: '50%'
-                }}
+                backgroundColor={hexColorFromString(row.category)}
+                text={{ fullAddress, category }}
               />
             )
           })}
