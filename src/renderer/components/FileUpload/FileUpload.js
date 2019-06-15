@@ -2,7 +2,7 @@
 import React from 'react';
 import CsvParse from '@vtex/react-csv-parse'
 import { fileUpload, fileUploadFailure, deleteFile, selectFile } from './actions'
-import { arrayHasDuplicates, reformatData } from './helpers'
+import { arrayHasDuplicates } from './helpers'
 import styles from './styles';
 
 export default class extends React.Component {
@@ -34,9 +34,13 @@ export default class extends React.Component {
     event.preventDefault()
     const { name } = document.getElementById('fileInput').files[0]
     const { dispatch } = this.props;
-    const { data, columns } = this.state;
-    dispatch(fileUpload({ data, columns, name }))
-      .then(() => this.resetState())
+    const { data, columns, columns: { ADDRESS, CITY, STATE, ZIPCODE, CATEGORY } } = this.state;
+    if (arrayHasDuplicates([ADDRESS, CITY, STATE, ZIPCODE, CATEGORY])) {
+      dispatch(fileUploadFailure({ message: 'Each label must have a unique value.' }))
+    } else {
+      dispatch(fileUpload({ data, columns, name }))
+        .then(() => this.resetState())
+    }
   }
 
   handleChangeSelect = event => {
