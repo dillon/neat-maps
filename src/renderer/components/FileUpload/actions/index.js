@@ -34,7 +34,7 @@ export const fileUpload = ({ data, columns, name }) => (dispatch) => {
   const promises = reformatedData.map(row => {
     const { address, city, state, zipcode, category } = row
     const fullAddress = `${address}, ${city}, ${state} ${zipcode}`
-    return fetch(`https://maps.googleapis.com/maps/api/geocode/json?key=${GOOGLE_API_KEY}&address=${fullAddress}`)
+    return fetch(`https://maps.googleapis.com/maps/api/geocode/json?key=${process.env.REACT_APP_GOOGLE_API_KEY}&address=${fullAddress}`)
       .then(response => response.json())
       .then(({ results }) => ({
         name,
