@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { login } from './actions';
 import styles from './styles';
 
-export default class extends React.Component {
+class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -53,3 +54,9 @@ export default class extends React.Component {
     )
   }
 }
+
+Login.propTypes = {
+  message: PropTypes.string.isRequired
+}
+
+export default Login;

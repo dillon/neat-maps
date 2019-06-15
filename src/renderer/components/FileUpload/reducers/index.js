@@ -10,7 +10,7 @@ const initialState = {
   fileNames: [],
   numberOfFiles: 0,
   index: -1,
-  message: null,
+  message: '',
 }
 
 export default (state = initialState, action) => {

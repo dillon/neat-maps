@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 
 const styles = {
   containerDefault: {
@@ -44,8 +44,7 @@ const styles = {
   }
 }
 
-const Marker = props => {
-  const { backgroundColor, $hover, text: { fullAddress, category } } = props;
+const Marker = ({ backgroundColor, $hover = false, text: { fullAddress, category } }) => {
   const { dotDefault, dotHover, label, containerHover, containerDefault, categoryText } = styles;
   const url = `https://www.google.com/maps/place/${fullAddress.replace(' ', '+')}`
   return (
@@ -66,4 +65,18 @@ const Marker = props => {
     </a>
   )
 }
+
+Marker.defaultProps = {
+  $hover: false
+}
+
+Marker.propTypes = {
+  backgroundColor: PropTypes.string.isRequired,
+  $hover: PropTypes.bool,
+  text: PropTypes.shape({
+    fullAddress: PropTypes.string.isRequired,
+    category: PropTypes.string.isRequired
+  }).isRequired
+}
+
 export default Marker;

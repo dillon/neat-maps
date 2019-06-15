@@ -1,11 +1,13 @@
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import CsvParse from '@vtex/react-csv-parse'
+import PropTypes from 'prop-types';
 import { fileUpload, fileUploadFailure, deleteFile, selectFile } from './actions'
 import { arrayHasDuplicates } from './helpers'
 import styles from './styles';
 
-export default class extends React.Component {
+
+class FileUpload extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -138,3 +140,13 @@ export default class extends React.Component {
     )
   }
 }
+
+
+FileUpload.propTypes = {
+  numberOfFiles: PropTypes.number.isRequired,
+  fileNames: PropTypes.arrayOf(PropTypes.string).isRequired,
+  message: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired
+}
+
+export default FileUpload;

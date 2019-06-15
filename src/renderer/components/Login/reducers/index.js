@@ -6,8 +6,8 @@ import {
 } from '../actions';
 
 const initialState = {
-  account: null,
-  message: null
+  account: '',
+  message: ''
 };
 
 export default (state = initialState, action) => {
