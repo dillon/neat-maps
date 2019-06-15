@@ -1,7 +1,7 @@
 /* eslint-disable react/destructuring-assignment */
 import React from 'react';
 import CsvParse from '@vtex/react-csv-parse'
-import { fileUploadSuccess, fileUploadFailure, deleteFile, selectFile } from './actions'
+import { fileUpload, fileUploadFailure, deleteFile, selectFile } from './actions'
 import { arrayHasDuplicates, reformatData } from './helpers'
 import styles from './styles';
 
@@ -34,13 +34,9 @@ export default class extends React.Component {
     event.preventDefault()
     const { name } = document.getElementById('fileInput').files[0]
     const { dispatch } = this.props;
-    const { data, columns, columns: { ADDRESS, CITY, STATE, ZIPCODE, CATEGORY } } = this.state;
-    if (arrayHasDuplicates([ADDRESS, CITY, STATE, ZIPCODE, CATEGORY])) {
-      dispatch(fileUploadFailure({ message: 'Column selections must each be unique' }))
-    } else {
-      dispatch(fileUploadSuccess({ data: reformatData({ data, columns }), name }))
-      this.resetState()
-    }
+    const { data, columns } = this.state;
+    dispatch(fileUpload({ data, columns, name }))
+      .then(() => this.resetState())
   }
 
   handleChangeSelect = event => {
@@ -85,12 +81,13 @@ export default class extends React.Component {
     const columnNames = ['ADDRESS', 'CITY', 'STATE', 'ZIPCODE', 'CATEGORY']
     return (
       <div>
+        <data></data>
         <div>
           {fileNames.map((x, i) => (
             // eslint-disable-next-line react/no-array-index-key
             <div key={x + i} style={i === index ? styles.fileInfoContainerSelected : styles.fileInfoContainer}>
               <span style={styles.fileInfoChild}>{x}</span>
-              <button type="submit" name='select-file' onClick={event => this.selectFile({ event, index: i })} style={styles.selectButton}>Select</button>
+              {index === i ? '' : <button type="submit" name='select-file' onClick={event => this.selectFile({ event, index: i })} style={styles.selectButton}>Select</button>}
               <button type="submit" name='delete-file' onClick={event => this.deleteFile({ event, index: i })}>Delete</button>
             </div>)
           )}

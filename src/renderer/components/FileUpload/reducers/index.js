@@ -20,7 +20,7 @@ export default (state = initialState, action) => {
         ...state,
         message: action.payload.message
       };
-    case FILE_UPLOAD_SUCCESS:
+    case FILE_UPLOAD_SUCCESS: // TODO
       return {
         ...state,
         files: [...state.files, action.payload.data],
@@ -33,11 +33,11 @@ export default (state = initialState, action) => {
       return {
         ...state,
         files: [
-          ...state.files.slice(0, action.payload.index - 1),
+          ...state.files.slice(0, action.payload.index),
           ...state.files.slice(action.payload.index + 1)
         ],
         fileNames: [
-          ...state.fileNames.slice(0, action.payload.index - 1),
+          ...state.fileNames.slice(0, action.payload.index),
           ...state.fileNames.slice(action.payload.index + 1)
         ],
         numberOfFiles: state.numberOfFiles - 1,
