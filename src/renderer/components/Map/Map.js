@@ -14,10 +14,8 @@ class Map extends Component {
     const { files, index } = this.props;
     const mapDefaults = { zoom: 0, center: { lat: 36, lng: -100 } }
     const bounds = findBounds({ arr: files[index] });
-    console.log(bounds)
     const size = { width: MAP_WIDTH, height: MAP_HEIGHT }
     const { zoom, center } = bounds ? fitBounds(bounds, size) : mapDefaults
-    console.log(zoom, center)
 
     return (
       // Important! Always set the container height explicitly
