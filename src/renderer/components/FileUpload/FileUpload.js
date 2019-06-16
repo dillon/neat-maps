@@ -23,7 +23,7 @@ class FileUpload extends React.Component {
   }
 
   handleDataUpload = data => {
-    this.setState({ data })
+    this.setState({ data: data.slice(0, 21) })
   }
 
   handleErrorUpload = ({ reason }) => {
