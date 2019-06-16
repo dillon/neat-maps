@@ -56,7 +56,8 @@ class FileUpload extends React.Component {
   }
 
   resetState = () => {
-    document.getElementById('fileInput').value = ''
+    const fileInput = document.getElementById('fileInput')
+    if (fileInput) fileInput.value = '';
     this.setState({
       data: null,
       columns: {
