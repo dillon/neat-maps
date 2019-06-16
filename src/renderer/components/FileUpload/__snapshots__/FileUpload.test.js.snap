@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <data />
+  <div>
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flex": 1,
+          "fontWeight": "bold",
+          "margin": 2,
+          "padding": 3,
+        }
+      }
+    >
+      <span
+        style={
+          Object {
+            "flex": 1,
+          }
+        }
+      >
+        name1
+      </span>
+      
+      <button
+        name="delete-file"
+        onClick={[Function]}
+        type="submit"
+      >
+        Delete
+      </button>
+    </div>
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "flex": 1,
+          "margin": 2,
+          "padding": 3,
+        }
+      }
+    >
+      <span
+        style={
+          Object {
+            "flex": 1,
+          }
+        }
+      >
+        name2
+      </span>
+      <button
+        name="select-file"
+        onClick={[Function]}
+        style={
+          Object {
+            "margin": "0px 10px",
+          }
+        }
+        type="submit"
+      >
+        Select
+      </button>
+      <button
+        name="delete-file"
+        onClick={[Function]}
+        type="submit"
+      >
+        Delete
+      </button>
+    </div>
+  </div>
+  <form
+    id="form"
+    onSubmit={[Function]}
+  >
+    <input
+      accept=".csv"
+      id="fileInput"
+      onChange={[Function]}
+      style={
+        Object {
+          "margin": "20px 0px",
+        }
+      }
+      type="file"
+    />
+  </form>
+  <p>
+    message1
+  </p>
+</div>
+`;

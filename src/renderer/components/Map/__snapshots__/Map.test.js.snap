@@ -1,0 +1,183 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  style={
+    Object {
+      "height": 600,
+      "width": 600,
+    }
+  }
+>
+  <div
+    onClick={[Function]}
+    onMouseDownCapture={[Function]}
+    onMouseMove={[Function]}
+    style={
+      Object {
+        "height": "100%",
+        "margin": 0,
+        "padding": 0,
+        "position": "relative",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "height": "100%",
+          "left": 0,
+          "margin": 0,
+          "padding": 0,
+          "position": "absolute",
+          "top": 0,
+          "width": "100%",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "height": "50%",
+          "left": "50%",
+          "margin": 0,
+          "padding": 0,
+          "position": "absolute",
+          "top": "50%",
+          "width": "50%",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "height": "100%",
+            "left": 0,
+            "margin": 0,
+            "padding": 0,
+            "position": "absolute",
+            "top": 0,
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "height": 0,
+              "left": 85.97128988447366,
+              "position": "absolute",
+              "top": 228.15419160097372,
+              "width": 0,
+            }
+          }
+        >
+          <a
+            href="https://www.google.com/maps/place/2800+Sand Hill Road, Menlo Park, CA 94025"
+            rel="noopener noreferrer"
+            style={
+              Object {
+                "color": "black",
+                "position": "absolute",
+                "textDecoration": "none",
+                "transform": "translate(-50%, -50%)",
+              }
+            }
+            target="_blank"
+          >
+            <div
+              style={
+                Object {
+                  "backgroundColor": "#A2FEC3",
+                  "border": "1px solid black",
+                  "borderRadius": "50%",
+                  "height": 15,
+                  "width": 15,
+                }
+              }
+            />
+          </a>
+        </div>
+        <div
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "height": 0,
+              "left": -85.97128988441546,
+              "position": "absolute",
+              "top": -228.15419160103193,
+              "width": 0,
+            }
+          }
+        >
+          <a
+            href="https://www.google.com/maps/place/919+Edgewater Blvd, Foster City, CA 94404"
+            rel="noopener noreferrer"
+            style={
+              Object {
+                "color": "black",
+                "position": "absolute",
+                "textDecoration": "none",
+                "transform": "translate(-50%, -50%)",
+              }
+            }
+            target="_blank"
+          >
+            <div
+              style={
+                Object {
+                  "backgroundColor": "#22113F",
+                  "border": "1px solid black",
+                  "borderRadius": "50%",
+                  "height": 15,
+                  "width": 15,
+                }
+              }
+            />
+          </a>
+        </div>
+        <div
+          style={
+            Object {
+              "backgroundColor": "transparent",
+              "height": 0,
+              "left": -83.78093112885836,
+              "position": "absolute",
+              "top": -132.36569285730366,
+              "width": 0,
+            }
+          }
+        >
+          <a
+            href="https://www.google.com/maps/place/1309+Elmer St A, Belmont, CA 94002"
+            rel="noopener noreferrer"
+            style={
+              Object {
+                "color": "black",
+                "position": "absolute",
+                "textDecoration": "none",
+                "transform": "translate(-50%, -50%)",
+              }
+            }
+            target="_blank"
+          >
+            <div
+              style={
+                Object {
+                  "backgroundColor": "#641938",
+                  "border": "1px solid black",
+                  "borderRadius": "50%",
+                  "height": 15,
+                  "width": 15,
+                }
+              }
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

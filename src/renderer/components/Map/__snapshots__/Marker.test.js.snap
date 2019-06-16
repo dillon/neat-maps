@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<a
+  href="https://www.google.com/maps/place/138+west 12th street, Queens, NY 10018"
+  rel="noopener noreferrer"
+  style={
+    Object {
+      "color": "black",
+      "position": "absolute",
+      "textDecoration": "none",
+      "transform": "translate(-50%, -50%)",
+    }
+  }
+  target="_blank"
+>
+  <div
+    style={
+      Object {
+        "backgroundColor": "#F75E53",
+        "border": "1px solid black",
+        "borderRadius": "50%",
+        "height": 15,
+        "width": 15,
+      }
+    }
+  />
+</a>
+`;
