@@ -1,4 +1,4 @@
-import fetch from 'isomorphic-fetch';
+import 'isomorphic-fetch';
 import { url } from '../constants/api'
 
 export const LOGIN_REQUEST = 'LOGIN';
@@ -22,6 +22,7 @@ const loginSuccess = ({ account, message = 'Login success. Redirecting...' }) =>
 export const login = ({ email, password }) => (dispatch) => {
   dispatch(loginRequest({ message: 'checking credentials...' }))
   const queries = `?email=${email}&password=${password}`;
+  // eslint-disable-next-line no-undef
   return fetch(url + queries, { method: 'POST' })
     .then(response => response.json())
     .then(data => {

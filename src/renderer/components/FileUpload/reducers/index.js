@@ -5,7 +5,7 @@ import {
   SELECT_FILE
 } from '../actions'
 
-const initialState = {
+export const initialState = {
   files: [],
   fileNames: [],
   numberOfFiles: 0,
@@ -41,14 +41,13 @@ export default (state = initialState, action) => {
           ...state.fileNames.slice(action.payload.index + 1)
         ],
         numberOfFiles: state.numberOfFiles - 1,
-        index: state.index - 1,
+        index: state.index >= (state.numberOfFiles - 1) ? state.index - 1 : state.index,
         message: ''
 
       };
     case SELECT_FILE:
       return {
         ...state,
-        account: null,
         index: action.payload.index
       };
     default:

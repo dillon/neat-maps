@@ -5,7 +5,7 @@ import {
   LOGOUT
 } from '../actions';
 
-const initialState = {
+export const initialState = {
   account: '',
   message: ''
 };
@@ -31,7 +31,7 @@ export default (state = initialState, action) => {
     case LOGOUT:
       return {
         ...state,
-        account: null,
+        account: '',
         message: action.payload.message
       };
     default:

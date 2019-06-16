@@ -1,7 +1,6 @@
-import fetch from 'isomorphic-fetch';
+import 'isomorphic-fetch'
 import { arrayHasDuplicates, reformatData } from '../helpers';
 
-export const FILE_UPLOAD = 'FILE_UPLOAD';
 export const FILE_UPLOAD_REQUEST = 'FILE_UPLOAD_REQUEST';
 export const FILE_UPLOAD_SUCCESS = 'FILE_UPLOAD_SUCCESS';
 export const FILE_UPLOAD_FAILURE = 'FILE_UPLOAD_FAILURE';
@@ -34,6 +33,7 @@ export const fileUpload = ({ data, columns, name }) => (dispatch) => {
   const promises = reformatedData.map(row => {
     const { address, city, state, zipcode, category } = row
     const fullAddress = `${address}, ${city}, ${state} ${zipcode}`
+    // eslint-disable-next-line no-undef
     return fetch(`https://maps.googleapis.com/maps/api/geocode/json?key=${process.env.REACT_APP_GOOGLE_API_KEY}&address=${fullAddress}`)
       .then(response => response.json())
       .then(({ results }) => ({
