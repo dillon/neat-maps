@@ -16,9 +16,9 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "start": "react-scripts start .env",
-    "build": "react-scripts build .env",
-    "predeploy": "npm run build .env",
+    "start": "react-scripts start .env.local",
+    "build": "react-scripts build .env.local",
+    "predeploy": "npm run build .env.local",
     "deploy": "gh-pages -d build",
     "test": "jest",
     "test:watch": "jest --watch",

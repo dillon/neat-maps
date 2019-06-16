@@ -6,7 +6,7 @@ A React webapp that accepts a CSV upload with five columns of up to 20 rows of i
 
 ## Installation
 
-1. The key in `.env` is restricted, and will only work on `dillon.global/`. Replace the key with your own.
+1. Replace the key in `.env` with your own.
 2. `yarn test:watch`
 3. `yarn start`
 
