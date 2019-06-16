@@ -37,10 +37,10 @@ class Login extends React.Component {
       <div style={styles.login}>
         <form onSubmit={this.handleSubmit} style={styles.login}>
           <label htmlFor="email" style={styles.row} >
-            <span>Email: </span><input style={styles.input} type="text" name="email" value={email} onChange={this.handleFormChange} />
+            <span>Email: </span><input style={styles.input} autoComplete="username" type="text" name="email" value={email} onChange={this.handleFormChange} />
           </label>
           <label htmlFor="password" style={styles.row} >
-            <span>Password: </span><input style={styles.input} type="password" name="password" value={password} onChange={this.handleFormChange} />
+            <span>Password: </span><input style={styles.input} autoComplete="current-password" type="password" name="password" value={password} onChange={this.handleFormChange} />
           </label>
           <input
             type="submit"
