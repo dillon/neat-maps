@@ -15,8 +15,8 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "start": "react-scripts start .env.local",
-    "build": "react-scripts build",
+    "start": "react-scripts start .env",
+    "build": "react-scripts build .env",
     "test": "jest",
     "test:watch": "jest --watch",
     "eject": "react-scripts eject"
@@ -40,7 +40,6 @@
     "babel-cli": "^6.26.0",
     "babel-jest": "^24.8.0",
     "babel-preset-react-app": "^9.0.0",
-    "enzyme": "^3.10.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.3.0",
@@ -48,9 +47,8 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-react": "^7.13.0",
-    "fetch-mock": "^7.3.3",
+    "gh-pages": "^2.0.1",
     "prettier": "^1.18.2",
-    "react-test-renderer": "^16.8.6",
-    "redux-mock-store": "^1.5.3"
+    "react-test-renderer": "^16.8.6"
   }
 }
