@@ -1,6 +1,7 @@
 {
   "name": "neat-maps",
   "version": "0.1.0",
+  "homepage": "http://dillon.global/neat-maps",
   "private": true,
   "dependencies": {
     "@vtex/react-csv-parse": "^3.0.2",
@@ -17,6 +18,8 @@
   "scripts": {
     "start": "react-scripts start .env",
     "build": "react-scripts build .env",
+    "predeploy": "npm run build .env",
+    "deploy": "gh-pages -d build",
     "test": "jest",
     "test:watch": "jest --watch",
     "eject": "react-scripts eject"
