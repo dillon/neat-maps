@@ -1,7 +1,7 @@
 import React from 'react';
 import { create } from 'react-test-renderer';
-import Marker from './Marker';
-import hexColorFromString from './utils/hexColorFromString';
+import Marker from '../Marker';
+import hexColorFromString from '../utils/hexColorFromString';
 
 const row = {
   lat: 123.45678,

@@ -1,6 +1,6 @@
 import React from 'react';
 import { create } from 'react-test-renderer';
-import FileUpload from './FileUpload';
+import FileUpload from '../FileUpload';
 
 it('renders correctly', () => {
   const tree = create(

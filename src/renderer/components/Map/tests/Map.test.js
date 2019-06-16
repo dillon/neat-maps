@@ -1,6 +1,6 @@
 import React from 'react';
 import { create } from 'react-test-renderer';
-import Map from './Map';
+import Map from '../Map';
 
 
 const mockFiles = [
