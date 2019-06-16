@@ -36,15 +36,21 @@ export const fileUpload = ({ data, columns, name }) => (dispatch) => {
     // eslint-disable-next-line no-undef
     return fetch(`https://maps.googleapis.com/maps/api/geocode/json?key=${process.env.REACT_APP_GOOGLE_API_KEY}&address=${fullAddress}`)
       .then(response => response.json())
-      .then(({ results }) => ({
-        category,
-        lat: results[0].geometry.location.lat,
-        lng: results[0].geometry.location.lng,
-        fullAddress
-      }))
+      .then(({ results }) => (
+        {
+          category,
+          lat: results[0].geometry.location.lat,
+          lng: results[0].geometry.location.lng,
+          fullAddress
+        }))
+
   })
   return Promise.all(promises)
     .then(allPromisesData => dispatch(fileUploadSuccess({ data: allPromisesData, name })))
+    .catch(({ message }, more) => {
+      console.log(message, more)
+      dispatch(fileUploadFailure({ message: 'Error parsing file' }))
+    })
 }
 
 
