@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/neat-maps/static/css/main.311bc284.chunk.css",
+    "main.js": "/neat-maps/static/js/main.3bd6278b.chunk.js",
+    "main.js.map": "/neat-maps/static/js/main.3bd6278b.chunk.js.map",
+    "runtime~main.js": "/neat-maps/static/js/runtime~main.1eef1021.js",
+    "runtime~main.js.map": "/neat-maps/static/js/runtime~main.1eef1021.js.map",
+    "static/js/2.94bd1555.chunk.js": "/neat-maps/static/js/2.94bd1555.chunk.js",
+    "static/js/2.94bd1555.chunk.js.map": "/neat-maps/static/js/2.94bd1555.chunk.js.map",
+    "index.html": "/neat-maps/index.html",
+    "precache-manifest.d63cb85ce08be64db63ca2cac4b8948f.js": "/neat-maps/precache-manifest.d63cb85ce08be64db63ca2cac4b8948f.js",
+    "service-worker.js": "/neat-maps/service-worker.js",
+    "static/css/main.311bc284.chunk.css.map": "/neat-maps/static/css/main.311bc284.chunk.css.map"
+  }
+}
