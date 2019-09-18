@@ -12,7 +12,7 @@ action "Deploy to GitHub Pages" {
   uses = "./"
   needs = "Write sha"
   env = {
-    BUILD_DIR = "gh-pages/"
+    BUILD_DIR = "public/"
   }
   secrets = ["GH_PAT"]
 }
