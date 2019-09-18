@@ -1,14 +1,15 @@
 workflow "Test ghpages" {
   on = "push"
-  resolves = ["Deploy to GitHub Pages"]
+  resolves = ["Build"]
 }
 
-action "Write sha" {
-  uses = "actions/bin/sh@db72a46c8ce298e5d2c3a51861e20c455581524f"
-  args = ["echo $GITHUB_SHA >> public/index.html"]
+action "Build" {
+  uses = "actions/npm@master"
+  args = "install"
+  resolves = ["Deploy"]
 }
 
-action "Deploy to GitHub Pages" {
+action "Deploy" {
   uses = "./"
   needs = "Write sha"
   env = {
